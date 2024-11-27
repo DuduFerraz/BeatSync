@@ -90,6 +90,36 @@ main {
     align-items: center;
 }
 
+    #mainPl {
+            background-color: rgba(0, 0, 0, 0.671); 
+            height: 85%;
+        }
+        #forPlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 9px rgba(255, 255, 255, 0.8);
+            border-radius: 13px;
+            opacity: 0; 
+            animation: aparecer 3s forwards; 
+        }
+
+        @keyframes aparecer {
+            0% {
+                opacity: 0;
+                transform: scale(0.8); 
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1); 
+            }
+        }
+
+        iframe {
+            width: 80vw;
+            height: 63vh;
+        }
+
 .barra {
     width: 60vw;
     background-color:#000000;
@@ -137,7 +167,7 @@ main {
     padding: 2px;
 }
 
-/*Style do footer geral*/
+
 footer {
     display: flex;
     background-color: rgb(0, 0, 0);
@@ -151,7 +181,6 @@ footer {
     align-self: center;
     color: white;
 }
-/*Fim do style do footer geral*/
 
 #sobreNos {
     background-color: #830400; /* fundo semitransparente */
@@ -323,6 +352,16 @@ form:hover {
     outline: none;
 }
 
+.input2 {
+    background: none;
+    color: rgb(0, 0, 0);
+    border-bottom: 1px 1px 1px rgb(0, 0, 0);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
 h2 {
     text-align: center; /* Centraliza o título */
     margin-bottom: 20px; /* Espaçamento abaixo do título */
@@ -364,8 +403,8 @@ p.pgtreino {
         background-color: black;
         border: 1px solid rgb(0, 0, 0);
         justify-content: center;
-        width: 80%;
-        height: auto;
+        width: 60%;
+        height: 60%;
     }
     th {
         color: white;
@@ -375,7 +414,7 @@ p.pgtreino {
     td {
         text-align: center;
         color: white;
-        padding: 10px;
+        padding: 15px;
         border: 1px solid rgb(255, 255, 255);
     }
     .table-conjunto {
@@ -386,25 +425,26 @@ p.pgtreino {
         height: 60%;
         margin-top: 20px;
     }
-    .btn-interno-table {
-        background-color: #FFFFFF;
-        padding: 5px;
-        color: inherit;
-        border: none;
-        border-radius: 10px;
-    }
-    .span-table-interno {
-        color: #000000;
-        font-weight: bold;
-    }
-    .link-btn-table {
-        text-decoration: none;
-        color: #000000;
-    }
 /*fim do style de tabela de treinos*/
 
 /*Style do botão de voltar e exemplo nos treinos*/
-    .btn-table {
+    .volta-categoria {
+        font-size: 25px;
+        align-items: center;
+        padding: 15px;
+        background-color: black;
+        border-radius: 7px;
+        color: white;
+    }
+    .conjunto-botao {
+        justify-content: space-around;
+        display: flex;
+        margin-top: 10px;
+    }
+/*Fim do style do botão de voltar e exemplo dos treinos*/
+
+
+button {
     display: inline-block;
     border-radius: 4px;
     background-color: #000000;
@@ -419,19 +459,19 @@ p.pgtreino {
     cursor: pointer;
     margin: 5px;
    }
-   .btn-table a {
+   button a {
      color: inherit;
      text-decoration: none;
    }
    
-   .btn-table .span-table {
+   button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
    }
    
-   .btn-table .span-table:after {
+   button span:after {
     content: '»';
     position: absolute;
     opacity: 0;
@@ -440,17 +480,11 @@ p.pgtreino {
     transition: 0.5s;
    }
    
-   .btn-table:hover .span-table {
+   button:hover span {
     padding-right: 15px;
    }
    
-   .btn-table:hover span:after {
+   button:hover span:after {
     opacity: 1;
     right: 0;
    }
-    .conjunto-botao {
-        justify-content: space-around;
-        display: flex;
-        margin-top: 10px;
-    }
-/*Fim do style do botão de voltar e exemplo dos treinos*/

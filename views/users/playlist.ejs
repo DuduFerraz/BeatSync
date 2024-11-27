@@ -1,86 +1,46 @@
+<main class="main-treino">
+  <div class="form-treino">
+      <form class="form2" onsubmit="mostrarConteudo(event)"> <!-- Submete para a rota correta -->
+          <h2>Gênero Musicais</h2>
+          <p class="pgtreino">Qual tipo de combinação gostaria de ouvir?</p>
+          <div class="fpr-treino">
+              <div class="camp-treino">
+                <select class="input2" name="play" id="playlists">
+                    <option id="playlists" value="a1">Funk/Phonk/Pop</option>
+                    <option id="playlists" value="a2">Phonk/Metal/Pop</option>
+                    <option id="playlists" value="a3">Eletro/Hip-Hop/Metal</option>
+                    <option id="playlists" value="a4">Hip-Hop/Metal/Pop</option>
+                </select>
+            </div>
+              <div class="btn">
+                  <button class="botao" type="submit">Enviar</button>
+              </div>
+          </div>
+      </form>
+  </div>
+</main>
+<script>
+  function mostrarConteudo(event) {
+      // Evita o envio padrão do formulário
+      event.preventDefault();
 
-  <button>
-    <a href="https://open.spotify.com/embed/playlist/0FS3aUlCo6lV5Uhh74jyGx?utm_source=generator">
-      <span>Playlist 1</span>
-      <p>Rock</p>
-    </a>
-  </button> 
-  <button>
-    <a href="https://open.spotify.com/embed/playlist/2wLlvBwInlJ9NrZjNLZIdL?utm_source=generator">  
-      <span>Playlist 2</span>
-      <p>Rock</p>
-    </a>
-  </button>
-  <button>
-    <a href="https://open.spotify.com/embed/playlist/2FOSuTNoIjeKWBvvFyqJhL?utm_source=generator">  
-      <span>Playlist 3</span>
-      <p>Rock</p>
-    </a>
-  </button> 
-  <button>
-    <a href="https://open.spotify.com/embed/playlist/0jdFUdkzabcP6k5BlAgQmc?utm_source=generator">
-      <span>Playlist 4</span>
-      <p>Eletrônica</p>
-    </a>
-  </button> 
-  <button>
-    <a href="https://open.spotify.com/embed/playlist/3Z4OwMn6GgQxh69hFnXZc4?utm_source=generator">
-      <span>Playlist 5</span>
-      <p>Eletrônica</p>
-    </a>
-  </button>
+      // Obter o valor selecionado no <select>
+      const playlists = document.getElementById('playlists').value;
+
+      // Redirecionar para uma rota específica baseada no valor selecionado
+      if (playlists == 'a1') {
+          window.location.href = '/funk_phonk_pop';
+
+      } else if (playlists == 'a2') {
+          window.location.href = '/phonk_metal_pop';
+
+      } else if (playlists == 'a3') {
+          window.location.href = '/eletro_hiphop_metal';
+
+      } else if (playlists == 'a4') {
+          window.location.href = '/hiphop_metal_pop';
+      }
+  }
 
 
-<style> 
-
-p {
-  font-size: 10px;
-  font-family: Arial, sans-serif;
-  padding-top: 3px;
-}
-
-button {
- display: inline-block;
- border-radius: 4px;
- background-color: #000000;
- border: none;
- color: #FFFFFF;
- text-align: center;
- font-size: 17px;
- padding-top: 20px;
- padding: 16px;
- width: 150px;
- transition: all 0.5s;
- cursor: pointer;
- margin: 5px;
-}
-button a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button span {
- cursor: pointer;
- display: inline-block;
- position: relative;
- transition: 0.5s;
-}
-
-button span:after {
- content: '»';
- position: absolute;
- opacity: 0;
- top: 0;
- right: -15px;
- transition: 0.5s;
-}
-
-button:hover span {
- padding-right: 15px;
-}
-
-button:hover span:after {
- opacity: 1;
- right: 0;
-}
-</style>
+</script>

@@ -1,9 +1,9 @@
 const db = require('../config/db');
 
 const User = {
-    login: (user, callback) => {
-        const query = 'SELECT * FROM users WHERE email = ?';
-        db.query(query, [user.email], (err, results) => {
+    login: (usuarios, callback) => {
+        const query = 'SELECT * FROM usuarios WHERE email = ?';
+        db.query(query, [usuarios.email], (err, results) => {
             if (err) {
                 return callback(err);
             }
