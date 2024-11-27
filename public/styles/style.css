@@ -90,36 +90,6 @@ main {
     align-items: center;
 }
 
-    #mainPl {
-            background-color: rgba(0, 0, 0, 0.671); 
-            height: 85%;
-        }
-        #forPlay {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 9px rgba(255, 255, 255, 0.8);
-            border-radius: 13px;
-            opacity: 0; 
-            animation: aparecer 3s forwards; 
-        }
-
-        @keyframes aparecer {
-            0% {
-                opacity: 0;
-                transform: scale(0.8); 
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1); 
-            }
-        }
-
-        iframe {
-            width: 80vw;
-            height: 63vh;
-        }
-
 .barra {
     width: 60vw;
     background-color:#000000;
@@ -167,7 +137,7 @@ main {
     padding: 2px;
 }
 
-
+/*Style do footer geral*/
 footer {
     display: flex;
     background-color: rgb(0, 0, 0);
@@ -181,6 +151,7 @@ footer {
     align-self: center;
     color: white;
 }
+/*Fim do style do footer geral*/
 
 #sobreNos {
     background-color: #830400; /* fundo semitransparente */
@@ -352,16 +323,6 @@ form:hover {
     outline: none;
 }
 
-.input2 {
-    background: none;
-    color: rgb(0, 0, 0);
-    border-bottom: 1px 1px 1px rgb(0, 0, 0);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-}
-
 h2 {
     text-align: center; /* Centraliza o título */
     margin-bottom: 20px; /* Espaçamento abaixo do título */
@@ -403,8 +364,8 @@ p.pgtreino {
         background-color: black;
         border: 1px solid rgb(0, 0, 0);
         justify-content: center;
-        width: 60%;
-        height: 60%;
+        width: 80%;
+        height: auto;
     }
     th {
         color: white;
@@ -414,7 +375,7 @@ p.pgtreino {
     td {
         text-align: center;
         color: white;
-        padding: 15px;
+        padding: 10px;
         border: 1px solid rgb(255, 255, 255);
     }
     .table-conjunto {
@@ -425,26 +386,25 @@ p.pgtreino {
         height: 60%;
         margin-top: 20px;
     }
+    .btn-interno-table {
+        background-color: #FFFFFF;
+        padding: 5px;
+        color: inherit;
+        border: none;
+        border-radius: 10px;
+    }
+    .span-table-interno {
+        color: #000000;
+        font-weight: bold;
+    }
+    .link-btn-table {
+        text-decoration: none;
+        color: #000000;
+    }
 /*fim do style de tabela de treinos*/
 
 /*Style do botão de voltar e exemplo nos treinos*/
-    .volta-categoria {
-        font-size: 25px;
-        align-items: center;
-        padding: 15px;
-        background-color: black;
-        border-radius: 7px;
-        color: white;
-    }
-    .conjunto-botao {
-        justify-content: space-around;
-        display: flex;
-        margin-top: 10px;
-    }
-/*Fim do style do botão de voltar e exemplo dos treinos*/
-
-
-button {
+    .btn-table {
     display: inline-block;
     border-radius: 4px;
     background-color: #000000;
@@ -459,19 +419,19 @@ button {
     cursor: pointer;
     margin: 5px;
    }
-   button a {
+   .btn-table a {
      color: inherit;
      text-decoration: none;
    }
    
-   button span {
+   .btn-table .span-table {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
    }
    
-   button span:after {
+   .btn-table .span-table:after {
     content: '»';
     position: absolute;
     opacity: 0;
@@ -480,11 +440,61 @@ button {
     transition: 0.5s;
    }
    
-   button:hover span {
+   .btn-table:hover .span-table {
     padding-right: 15px;
    }
    
-   button:hover span:after {
+   .btn-table:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+    .conjunto-botao {
+        justify-content: space-around;
+        display: flex;
+        margin-top: 10px;
+    }
+/*Fim do style do botão de voltar e exemplo dos treinos*/
+.buton-play {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #000000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 20px;
+    padding: 16px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+.buton-play .link-play {
+     color: inherit;
+     text-decoration: none;
+   }
+   
+.buton-play .span-play {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+.buton-play .span-play:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+.buton-play:hover .span-play {
+    padding-right: 15px;
+   }
+   
+.buton-play:hover .span-play:after {
     opacity: 1;
     right: 0;
    }
