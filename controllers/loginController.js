@@ -10,7 +10,11 @@ const loginController = {
             if (err) {
                 return res.status(500).json({ error: err });
             }
+<<<<<<< HEAD
             if (!User) {
+=======
+            if (!usuarios) {
+>>>>>>> 15614a6d740f4c151c7474df2fbea76496f6e5ad
                 return res.status(401).json({ message: 'Seu e-mail ou senha estão incorretos!' });
             }
 
