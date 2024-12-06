@@ -5,10 +5,27 @@ const expressLayouts = require('express-ejs-layouts');
 const userRoutes = require('./routes/userRoutes');
 const indexRoutes = require('./routes/indexRoutes');
 const playRoutes = require('./routes/playRoutes');
+const session = require('express-session');
+const flash = require('connect-flash');
 const fs = require('fs');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+
+app.use(session({
+    secret: 'danielGostosu',
+    resave: true,
+    saveUninitialized: true
+
+}));
+
+app.use(flash());
+
+app.use((req, res, next) => {
+    res.locals.sucess_msg = req.flash('sucess_msg');
+    res.locals.error_msg = req.flash('error_msg');
+});
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -43,5 +60,5 @@ const renderAllViews = (dirPath, baseRoute = '') => {
 renderAllViews(path.join(__dirname, 'views'));
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Servidor ligado na porta ${PORT}`);
 });

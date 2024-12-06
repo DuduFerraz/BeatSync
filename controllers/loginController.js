@@ -1,4 +1,5 @@
 const User = require('../models/loginModel');
+const bcrypt = require('bcrypt');
 
 const loginController = {
 
@@ -9,11 +10,11 @@ const loginController = {
             if (err) {
                 return res.status(500).json({ error: err });
             }
-            if (!user) {
+            if (!User) {
                 return res.status(401).json({ message: 'Seu e-mail ou senha estão incorretos!' });
             }
 
-            const isValidPassword = (senha, usuarios.senha);
+            const isValidPassword = await bcrypt.compare(senha, usuarios.senha);
             if (!isValidPassword) {
                 return res.status(401).json({ message: 'E-mail ou senha invalidos!' });
             }
@@ -22,7 +23,7 @@ const loginController = {
         });
     },
     renderLoginForm: (req, res) => {
-        res.render('/login');
+        res.render('login');
     },
 };
 
