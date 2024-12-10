@@ -5,11 +5,8 @@ const expressLayouts = require('express-ejs-layouts');
 const userRoutes = require('./routes/userRoutes');
 const indexRoutes = require('./routes/indexRoutes');
 const playRoutes = require('./routes/playRoutes');
-<<<<<<< HEAD
 const session = require('express-session');
 const flash = require('connect-flash');
-=======
->>>>>>> 15614a6d740f4c151c7474df2fbea76496f6e5ad
 const fs = require('fs');
 const path = require('path');
 const app = express();

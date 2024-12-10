@@ -25,10 +25,6 @@ const cadastroController = {
                     data: newUser 
                 });
             }
-<<<<<<< HEAD
-=======
-
->>>>>>> 15614a6d740f4c151c7474df2fbea76496f6e5ad
             // Redireciona para a página de login após o cadastro bem-sucedido
             res.redirect('/login');
         });
