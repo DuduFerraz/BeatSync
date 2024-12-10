@@ -59,6 +59,8 @@ const renderAllViews = (dirPath, baseRoute = '') => {
 
 renderAllViews(path.join(__dirname, 'views'));
 
-app.listen(PORT, () => {
-    console.log(`Servidor ligado na porta ${PORT}`);
-});
+
+app.listen(3000, '127.0.0.1', () => {
+    console.log('Servidor rodando em http://127.0.0.1:3000');
+  });
+  
